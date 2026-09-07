@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.pth
+checkpoints/
+shift-guard-10-robust-image-classification-challenge/
+*.zip
+.DS_Store
+.ipynb_checkpoints/

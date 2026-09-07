@@ -1,0 +1,58 @@
+# ShiftGuard10 — Default Training Configuration
+# Primary model: WideResNet-28-10
+# Target hardware: A30 GPU (24 GB VRAM)
+
+# ─── Data ──────────────────────────────────────────────────────────────────
+data:
+  root: "shift-guard-10-robust-image-classification-challenge"
+  val_ratio: 0.1       # 10% stratified hold-out for validation
+  num_workers: 4
+  pin_memory: true
+
+# ─── Model ─────────────────────────────────────────────────────────────────
+model:
+  name: "wrn"          # WideResNet-28-10 (primary)
+  num_classes: 10
+
+  wrn:
+    depth: 28
+    widen_factor: 10   # ~36.5M parameters
+    dropout: 0.3
+
+# ─── Training ──────────────────────────────────────────────────────────────
+training:
+  epochs: 300
+  batch_size: 128
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 5.0e-4
+  warmup_epochs: 5
+
+  # MixUp / CutMix (disabled during final SWA phase)
+  mixup_alpha: 1.0
+  cutmix_alpha: 1.0
+  mix_prob: 0.5        # p(apply MixUp or CutMix per batch)
+
+  # SWA — Stochastic Weight Averaging starts at epoch 225 (last 25%)
+  swa_start: 225
+  swa_lr: 0.005
+
+  # Loss: Balanced Softmax (class-frequency-adjusted denominator)
+  use_balanced_sampler: false   # sampler off; loss handles imbalance
+
+# ─── Inference / TTA ───────────────────────────────────────────────────────
+inference:
+  tta_views: 31        # 1 clean + 30 stochastic augmentation views
+  batch_size: 512
+
+# ─── Output ────────────────────────────────────────────────────────────────
+output:
+  checkpoint_dir: "checkpoints"
+  submission_file: "submission.csv"
+
+# ─── Ensemble Seeds ─────────────────────────────────────────────────────────
+# Three seeds used in the ensemble (run src/train.py --seed N for each)
+seeds: [42, 7, 13]
+
+# ─── Seed ──────────────────────────────────────────────────────────────────
+seed: 42
