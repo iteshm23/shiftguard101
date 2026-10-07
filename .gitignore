@@ -1,10 +1,19 @@
-__pycache__/
-*.py[cod]
-*.egg-info/
-.env
-*.pth
-checkpoints/
+# data and model files
+data/*
+!data/README.md
 shift-guard-10-robust-image-classification-challenge/
-*.zip
-.DS_Store
+checkpoints/
+*.pth
+*.pt
+results/local/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
 .ipynb_checkpoints/
+.venv/
+venv/
+
+# os
+.DS_Store

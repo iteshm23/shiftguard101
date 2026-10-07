@@ -1,0 +1,165 @@
+{
+ "files": {
+  "train_rows": 29400,
+  "test_rows": 7600,
+  "train_png": 29400,
+  "test_png": 7600,
+  "classes_txt": [
+   "airplane",
+   "automobile",
+   "bird",
+   "cat",
+   "deer",
+   "dog",
+   "frog",
+   "horse",
+   "ship",
+   "truck"
+  ],
+  "sample_submission_labels": {
+   "airplane": 7600
+  },
+  "id_format": "6-digit zero-padded string; train and test ids both start at 000001"
+ },
+ "class_counts": {
+  "airplane": 5000,
+  "automobile": 5000,
+  "bird": 5000,
+  "cat": 5000,
+  "deer": 4000,
+  "dog": 4000,
+  "frog": 500,
+  "horse": 500,
+  "ship": 300,
+  "truck": 100
+ },
+ "imbalance_ratio_max_over_min": 50.0,
+ "image_shape": [
+  32,
+  32,
+  3
+ ],
+ "pixel_mean_0_1": {
+  "train": [
+   0.4925,
+   0.4832,
+   0.4474
+  ],
+  "test": [
+   0.494,
+   0.4841,
+   0.4476
+  ],
+  "cifar_constants": [
+   0.4914,
+   0.4822,
+   0.4465
+  ]
+ },
+ "pixel_std_0_1": {
+  "train": [
+   0.2467,
+   0.2428,
+   0.2614
+  ],
+  "test": [
+   0.2454,
+   0.2413,
+   0.2596
+  ],
+  "cifar_constants": [
+   0.247,
+   0.2435,
+   0.2616
+  ]
+ },
+ "exact_duplicates": {
+  "within_train": 0,
+  "within_test": 0,
+  "test_images_also_in_train": 0
+ },
+ "occlusion": {
+  "colour_rgb": [
+   125,
+   123,
+   114
+  ],
+  "train_images_with_patch": 1470,
+  "train_pct": 5.0,
+  "train_patch_sizes": {
+   "6x6": 1470
+  },
+  "test_images_with_patch": 380,
+  "test_pct": 5.0,
+  "test_patch_sizes": {
+   "10x10": 380
+  },
+  "train_pct_by_class": {
+   "airplane": 5.26,
+   "automobile": 5.14,
+   "bird": 4.42,
+   "cat": 5.26,
+   "deer": 5.18,
+   "dog": 4.65,
+   "frog": 7.0,
+   "horse": 4.4,
+   "ship": 3.33,
+   "truck": 6.0
+  }
+ },
+ "noise": {
+  "method": "Immerkaer noise estimate on R-G and B-G (chroma) and on gray (luma)",
+  "chroma_quantiles": {
+   "train": {
+    "10": 0.52,
+    "25": 0.73,
+    "50": 1.59,
+    "75": 3.09,
+    "90": 5.37
+   },
+   "test": {
+    "10": 0.72,
+    "25": 3.87,
+    "50": 5.51,
+    "75": 7.67,
+    "90": 8.32
+   }
+  },
+  "luma_quantiles": {
+   "train": {
+    "10": 2.69,
+    "25": 3.62,
+    "50": 4.81,
+    "75": 6.22,
+    "90": 8.16
+   },
+   "test": {
+    "10": 3.81,
+    "25": 5.56,
+    "50": 7.28,
+    "75": 9.08,
+    "90": 11.94
+   }
+  },
+  "pct_images_chroma_above_3.5": {
+   "train": 20.9,
+   "test": 75.2
+  },
+  "pct_images_chroma_above_6": {
+   "train": 3.3,
+   "test": 42.2
+  },
+  "luma_median_by_train_class": {
+   "airplane": 4.29,
+   "automobile": 5.36,
+   "bird": 4.47,
+   "cat": 4.74,
+   "deer": 4.91,
+   "dog": 4.78,
+   "frog": 6.31,
+   "horse": 5.44,
+   "ship": 4.28,
+   "truck": 5.42
+  }
+ }
+}
