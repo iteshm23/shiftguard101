@@ -1814,11 +1814,15 @@ Safer wording if you edit the resume: "...0.9488 macro-F1 on a held-out perturbe
 
 ### The GitHub link
 
-The resume's GitHub icon currently points to a repo that will be checked. `iteshm23/shiftguard10`
-(built earlier in this chat) is wrong in several places: seeds 42/7/13 (real: 42/137/7), 300 epochs
-with SWA from 225 (real: 450/360), "MixUp disabled during SWA" (not in the code), an ablation table
-and per-class F1 numbers with no source, and a `submission.csv` from the March CCT/LDAM era. Its
-"31-view TTA (1 clean + 30)" is actually correct. Replace it with this repo, or link the team repo.
+This repo is published as `github.com/iteshm23/shiftguard101` (renamed from `shiftguard10`; GitHub
+redirects the old URL, but update the link on the resume). An interviewer who opens it will see
+`notebook.py` with credit to the team repo `Xavaitron/Shiftguard10`, whose commits are by Pratyush
+Singh, so be ready to describe your own part (section 29.1).
+
+Its git history still contains the first version, an earlier reconstruction with wrong details
+(seeds 42/7/13, 300 epochs with SWA from 225, an ablation table and per-class F1 numbers with no
+source, a March-era `submission.csv`). The current files replace all of that. Removing it from the
+history would need a force-push.
 
 ---
 
